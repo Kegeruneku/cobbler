@@ -263,6 +263,26 @@ class CobblerSvc(object):
         
         return yaml.dump(newdata)
 
+    def cfengine(self,hostname=None,**rest):
+        self.__xmlrpc_setup()
+
+        if hostname is None:
+           return "hostname is required" 
+         
+        results = self.remote.find_system_by_dns_name(hostname)
+
+        classes = results.get("mgmt_classes", [])
+        params = results.get("mgmt_parameters",{})
+
+        return_value = "" 
+
+        if classes:
+            return_value += '+' + "\n+".join(classes) + '\n'
+        if params:
+            return_value += "\n".join(['=%s=%s' % (key, value) for (key, value) in params.items()])
+
+        return return_value
+
 def __test_setup():
 
     # this contains some code from remote.py that has been modified
