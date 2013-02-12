@@ -1,0 +1,3 @@
+#if $str($getVar('rudder_auto_setup','')) == "1"
+rudder-agent
+#end if

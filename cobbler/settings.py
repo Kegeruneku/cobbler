@@ -112,6 +112,8 @@ DEFAULTS = {
     "restart_dhcp"                        : [1,"bool"],
     "restart_xinetd"                      : [1,"bool"],
     "run_install_triggers"                : [1,"bool"],
+    "rudder_auto_setup"                   : [0,"bool"],
+    "rudder_server"                       : ["","str"],
     "scm_track_enabled"                   : [0,"bool"],
     "scm_track_mode"                      : ["git","str"],
     "serializer_pretty_json"              : [0,"bool"],

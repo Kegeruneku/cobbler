@@ -1,0 +1,9 @@
+#if $str($getVar('rudder_auto_setup','')) == "1"
+
+# insert the rudder server IP in the policy_server.dat file
+echo "$getVar('rudder_server','')" > /var/rudder/cfengine-community/policy_server.dat
+
+# turn rudder-agent service on for reboot
+/sbin/chkconfig rudder-agent on
+
+#end if

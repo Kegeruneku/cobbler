@@ -222,6 +222,16 @@ puppetca_path: "/usr/bin/puppet"
 # requires puppet_auto_setup above to be enabled
 remove_old_puppet_certs_automatically: 0
 
+# if enabled, this setting ensures that rudder is installed during
+# machine provision.
+# note: you need a repository providing rudder-agent for you as the
+# RHEL / Fedora repositories does not currently.
+rudder_auto_setup: 0
+
+# set the rudder server IP address or hostname, to be used by rudder
+# agents as a configuration reference
+rudder_server: ""
+
 # set to 1 to enable Cobbler's DHCP management features.
 # the choice of DHCP management engine is in /etc/cobbler/modules.conf
 manage_dhcp: 0
